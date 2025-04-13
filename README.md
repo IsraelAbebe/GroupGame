@@ -1,4 +1,4 @@
-# GroupGame (Python/Flask Version)
+# GroupGame (Python/Flask Version) [made with cline]
 
 A simple web application where a host displays a QR code, and clients can scan it with their phones to connect. Clients get a text area to submit an answer, and the host can reveal all submitted answers to compare within the group.
 
