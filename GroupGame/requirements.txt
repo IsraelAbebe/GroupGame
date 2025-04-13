@@ -1,0 +1,6 @@
+Flask
+Flask-SocketIO
+qrcode[pil]
+python-engineio
+python-socketio
+eventlet

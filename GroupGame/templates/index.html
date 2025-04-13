@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardio Host</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Include Socket.IO client library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Gardio Host - Session: <span id="session-id">{{ session_id }}</span></h1>
+
+    <div id="qr-code">
+        <h2>Scan QR Code to Join:</h2>
+        <img id="qr-code-img" src="{{ qr_code_data }}" alt="QR Code for joining session">
+    </div>
+    <button id="new-game-button" style="margin-top: 15px;">Start New Game</button>
+
+    <hr>
+
+    <div id="clients">
+        <h2>Connected Players:</h2>
+        <ul id="client-list">
+            <!-- Client status will be added here by JS -->
+        </ul>
+    </div>
+
+    <hr>
+
+    <div id="answers">
+        <h2>Answers:</h2>
+        <button id="reveal-button">Reveal Answers</button>
+        <ul id="answer-list">
+            <!-- Answers will be added here by JS -->
+            <!-- Initially, we'll just show placeholders -->
+        </ul>
+    </div>
+
+    <!-- Include the host-specific JavaScript -->
+    <script>
+        // Pass session ID to JavaScript
+        const SESSION_ID = "{{ session_id }}";
+    </script>
+    <script src="{{ url_for('static', filename='host.js') }}"></script>
+</body>
+</html>
